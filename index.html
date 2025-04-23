@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    
+    <header>
+        <!-- Navbar -->
+    <nav class="  bg shadow px-4 fixed top-0 left-0 w-full z-50">
+    <div class=" h-full mx-auto flex items-center justify-center">
+  
+      <!-- Logo bên trái -->
+      <div class="h-[80px] md:h-[100px] lg:h-[110px] w-auto mr-[27px] "><img src="./img/logo-800x800.png" class="h-full" alt=""></div>
+  
+      <!-- Menu nằm cạnh logo và căn giữa -->
+      <ul id="menu" class="hidden lg:flex space-x-6 font-medium ">
+        <li><a href="#" class="   text-yellow text-lg">TRANG CHỦ</a></li>
+        <li><a href="./gioi_thieu.html" class="  hover:text-lg text-yellow">GIỚI THIỆU</a></li>
+        <li><a href="./san_pham.html" class="  hover:text-lg text-yellow">SẢN PHẨM</a></li>
+        <li><a href="./lien_he.html" class="  hover:text-lg text-yellow">LIÊN HỆ</a></li>
+        <li><button id="callNowBtn"
+          class="bg-[#fff8ad] goingay px-2 py-1 rounded hover:text-white"
+        >
+          GỌI NGAY
+        </button></li>
+
+      </ul>
+  
+      <!-- Hamburger (Mobile) -->
+      <button id="menu-btn" class="lg:hidden text-white text-3xl focus:outline-none">
+        ☰
+      </button>
+    </div>
+  
+    <!-- Mobile Menu -->
+    <ul id="mobile-menu" class="lg:hidden hidden flex-col mt-3 px-4 font-medium">
+      <li><a href="./index.html" class="block text-white py-2 border-b">Trang chủ</a></li>
+      <li><a href="./gioi_thieu.html" class="block text-white py-2 border-b">Giới thiệu</a></li>
+      <li><a href="./san_pham.html" class="block text-white py-2 border-b">Sản phẩm</a></li>
+      <li><a href="./lien_he.html" class="block text-white py-2">Liên hệ</a></li>
+      
+    </ul>
+  </nav>
+  
+  <!-- Script toggle menu -->
+  <script>
+    const menuBtn = document.getElementById('menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+  
+    menuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+  
+    // Đảm bảo menu ẩn đi khi click bên ngoài (nếu cần)
+    window.addEventListener('click', (e) => {
+      if (!e.target.closest('nav')) {
+        mobileMenu.classList.add('hidden');
+      }
+    });
+  </script>
+    </header>
+
+    <!-- Phần nội dung chính -->
+    <main class="mt-[110px]">
+      <div class=" flex justify-center">
+        <div class="max-w-[1184px] w-full mx-auto h-full ">
+          <div class="w-[500px] h-[411px] mb-[27px] mx-auto">
+            <img src="./img/loramenplus-G4IsD.jpg" class="" alt="" />
+          </div>
+          <div class="flex justify-center h-[51px]">
+            <p class="text-blu">
+              Lora Men Plus – Chai Xịt Kéo Dài Q.Hệ Nam Giới
+            </p>
+          </div>
+          <div class="flex justify-center mb-[27px] h-[29px]">
+            <p class="text-red">Giá chỉ: 350000đ</p>
+          </div>
+          <div class="flex justify-center">
+            <button onclick="toggleForm()"
+              class="bg-[#d30000] text-white text-xl font-normol py-[7px] px-[20px] rounded hover:bg-[#b11b1b] focus:outline-none"
+            >
+              MUA HÀNG
+            </button>
+          </div>
+          <!-- thong tin -->
+          <div class="w-full mt-[27px]">
+            <h1 class="text-center mb-[20px] text-2xl font-bold uppercase text-[1.8rem]">
+              Chai Xịt Lora Men Plus
+            </h1>
+            <div class="border-t-4 border-[#4e240c] mx-auto w-[65px] mb-[27px]"></div>
+            <p class="mt-[27px] ">
+              Chai Xịt Lora Men Plus với thành phần thảo dược tự nhiên 100% giúp Nam giới thể hiện bản lĩnh với bạn tình giúp kéo dài thời gian quan hệ tduc và chống xuất tinh sớm. Lora Men Plus hiện nay là dòng sản phẩm chống xuất tinh sớm được ưa chuộng nhất hiện nay do có thành phần tự nhiên, không có tác dụng phụ và hiệu quả rất tốt.
+            </p>
+            <div
+              class="h-[autopx] max-w-[600px] mx-auto border-[5px] border-red-500 p-4 mt-[27px]"
+            >
+              <h2 class="uppercase text-center mt-[20px]">
+                lora men plus dạng xịt
+              </h2>
+              <img src="./img/image.png" class="h-auto w-auto" alt="" />
+              <p class="text-red text-center mt-[27px]">Giá chỉ: 350000đ</p>
+              <p class="text-center mt-[5px]">Sử dụng đến 40 lần</p>
+              <div class="flex justify-center">
+                <button onclick="toggleForm()"
+                  class="bg-[#d30000] mt-[1rem] text-white text-xl font-normol py-[7px] px-[20px] rounded hover:bg-[#b11b1b] focus:outline-none"
+                >
+                  MUA HÀNG
+                </button>
+              </div>
+            </div>
+          </div>
+          <!-- thong tin end -->
+           <div class="w-full mt-[27px]">
+            <h1 class="text-center text-2xl font-bold uppercase text-[1.8rem]">
+              nguồn gốc Lora Men Plus
+            </h1>
+            <div class="border-t-4 border-[#4e240c] mx-auto w-[65px] mt-[20px] mb-[27px]"></div>
+            <div class="w-full mt-[27px] grid grid-cols-1 md:grid-cols-2 gap-4 h-auto sm:grid-cols-1 ">
+              <div class=" p-4 h-[682px]">
+                <p class="mb-[21px]"><span class="bold">Chai xịt Lora Men</span> cải thiện ngay tình trạng, thể hiện bản lĩnh Nam giới</p>
+                <p class="mb-[21px]"><span class="bold">Loramen Plus</span> giúp đàn ông thể hiện bản lĩnh cuộc chơi với bạn tình giúp kéo dài thời gian</p>
+                <p class="mb-[21px]"><span class="bold">Lọ xịt Loramen</span> hiện nay là dòng sản phẩm được ưa chuộng nhất hiện nay do có thành phần tự nhiên</p>
+                <p class="mb-[21px]">Nguồn gốc của <span class="bold">Loramen</span> là một loại cao nấu từ các loại lá và cây trên rừng , Bao gồm các loại dược thảo trên rừng tây nguyên gồm các: nhân sâm, đinh hương, trầm hương, ba kích và, rễ dược thảo linh chi, bạch chỉ….</p>
+                <p class="mb-[21px]"><span class="bold">Lora Men</span> Đặc biệt có hiệu quả trong việc giúp kéo dài thời gian, tăng hưng phấn</p>
+                <p class="mb-[21px]"><span class="bold">Lora Men</span> là thảo mộc chuẩn tự nhiên, được nấu từ nhiều rễ cây và lá các loại dược liệu quý, thành phần lành tính.</p>
+                <div class=" h-[51px]">
+                  <p class="text-blu">
+                    Lora Men Plus – Chai Xịt Kéo Dài Q.Hệ Nam Giới
+                  </p>
+                </div>
+                <div class=" mb-[27px] h-[29px]">
+                  <p class="text-red">Giá chỉ: 350000đ</p>
+                </div>
+                <div class="">
+                  <button onclick="toggleForm()"
+                    class="bg-[#d30000] text-white text-xl font-normol py-[7px] px-[20px] rounded hover:bg-[#b11b1b] focus:outline-none"
+                  >
+                    MUA HÀNG
+                  </button>
+                  <!-- Form popup -->
+                <div id="orderForm" class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+                  <div class="bg-white rounded max-w-[500px] w-screen shadow-lg border border-gray-300 p-6 relative">
+
+                    <!-- Nút đóng -->
+                    <button onclick="toggleForm()" class="absolute top-2 right-2 text-gray-600 hover:text-black text-xl">&times;</button>
+
+                    <!-- Tiêu đề -->
+                    <h2 class="text-red-600 font-bold text-xl mb-2">THÔNG TIN GIAO HÀNG</h2>
+                    <p class="text-sm mb-4">
+                      Quý khách vui lòng điền thông tin để đặt hàng.
+                      <strong>Hoặc gọi hotline</strong> để được hỗ trợ:
+                      <span class="text-blue-800 font-bold">0909.731.988</span>
+                    </p>
+
+                    <!-- BẮT ĐẦU FORM -->
+                    <form id="contact-form" action="https://script.google.com/macros/s/AKfycbw6e3dIU3UJ-r3m-R0yuq_lTDGwXBOR1J-UuR3cSy19FJpWOjGsZo7B-C4RkK_t8dLA/exec" method="POST">
+                      <!-- Thông tin đơn hàng -->
+                      <div class="mb-6 border border-blue-500 rounded">
+                        <div class="bg-blue-500 text-white px-4 py-2 font-semibold rounded-t">Thông tin đơn hàng</div>
+                        <div class="p-4">
+                          <label class="block font-semibold mb-1">Số lượng <span class="text-red-600">**</span></label>
+                          <input name="soLuong" id="soLuong" type="number" class="w-full border px-3 py-2 mb-4" value="1" />
+
+                          <label class="block font-semibold mb-1">Yêu cầu (Không bắt buộc)</label>
+                          <textarea name="yeuCau" id="yeuCau" class="w-full border px-3 py-2 h-24 resize-none"></textarea>
+                        </div>
+                      </div>
+
+                      <!-- Thông tin nhận hàng -->
+                      <div class="mb-4 border border-blue-500 rounded">
+                        <div class="bg-blue-500 text-white px-4 py-2 font-semibold rounded-t">Thông tin nhận hàng</div>
+                        <div class="p-4">
+                          <label class="block font-semibold mb-1">Họ tên <span class="text-red-600">**</span></label>
+                          <input name="hoTen" id="hoTen" type="text" class="w-full border px-3 py-2 mb-4" required />
+
+                          <label class="block font-semibold mb-1">Điện thoại <span class="text-red-600">**</span></label>
+                          <input name="dienThoai" id="dienThoai" type="text" class="w-full border px-3 py-2 mb-1" required />
+                          <p id="dienThoai-error" class="text-red-500 text-sm hidden mb-3">Số điện thoại không hợp lệ (10 chữ số, bắt đầu bằng số 0).</p>
+
+                          <label class="block font-semibold mb-1">Địa chỉ nhận hàng <span class="text-red-600">**</span></label>
+                          <input name="diaChi" id="diaChi" type="text" class="w-full border px-3 py-2 mb-4" required />
+
+                          <label class="block font-semibold mb-1">Email (Không bắt buộc)</label>
+                          <input name="email" id="email" type="text" class="w-full border px-3 py-2" />
+                        </div>
+                      </div>
+
+                      <!-- Nút đặt hàng -->
+                      <button type="submit" class="bg-red-600 text-white px-6 py-2 font-semibold flex items-center gap-2 hover:bg-red-700 w-full justify-center">
+                        <i class="fa fa-paper-plane"></i> Đặt ngay
+                      </button>
+                    </form>
+                    <!-- KẾT THÚC FORM -->
+
+                  </div>
+                </div>
+
+                <!-- Script mở/đóng form -->
+                <script>
+                  function toggleForm() {
+                    const form = document.getElementById("orderForm");
+                    form.classList.toggle("hidden");
+                  }
+                </script>
+
+                <!-- Script xử lý form -->
+                <script>
+                  document.addEventListener("DOMContentLoaded", function () {
+                    const form = document.getElementById("contact-form");
+
+                    form.addEventListener("submit", function (e) {
+                      e.preventDefault();
+
+                      const formData = new FormData(form);
+                      const phone = formData.get("dienThoai");
+                      const phoneInput = document.getElementById("dienThoai");
+                      const phoneError = document.getElementById("dienThoai-error");
+
+                      const phoneRegex = /^0\d{9}$/; // Bắt đầu bằng 0 và đủ 10 số
+
+                      // Reset trạng thái lỗi
+                      phoneInput.classList.remove("border-red-500");
+                      phoneError.classList.add("hidden");
+
+                      // Kiểm tra hợp lệ
+                      if (!phoneRegex.test(phone)) {
+                        phoneInput.classList.add("border-red-500");
+                        phoneError.classList.remove("hidden");
+                        return;
+                      }
+
+                      // Gửi dữ liệu
+                      fetch(form.action, {
+                        method: "POST",
+                        body: formData
+                      })
+                        .then(response => {
+                          if (response.ok) {
+                            alert("✅ Đặt hàng thành công!");
+                            form.reset();
+                          } else {
+                            alert("❌ Có lỗi khi gửi, vui lòng thử lại.");
+                          }
+                        })
+                        .catch(error => {
+                          console.error("Lỗi:", error);
+                          alert("✅ Đặt hàng thành công!");
+                          form.reset();
+                          toggleForm(); // Ẩn popup nếu lỗi nhưng vẫn muốn thông báo thành công
+                        });
+                    });
+                  });
+                </script>
+                </div>
+              </div>
+              <div class=" p-4 h-[682px]">
+                <img src="./img/loramennguongoc-0zqgI.jpg" class="h-full" alt="">
+              </div>
+            </div>
+            <!-- lora men mua o dau -->
+             <div class="mt-[27px]  w-full h-auto">
+              <div class=" max-w-[600px] mx-auto border-[5px] border-red-500 p-4 mt-[27px]">
+                <h1 class="mx-auto mt-[27px] text-center text-2xl font-bold uppercase w-[450px] text-[1.8rem]">Lora Men Mua Ở Đâu Chính Hãng</h1>
+                <div class="border-t-4 border-[#4e240c] mt-[20px] mx-auto w-[65px] mb-[27px]"></div>
+                <p class="mt-[27px]"><span class="bold">Loramen</span> Plus sử dụng trong việc kéo dài thời gian khi sử dụng. Để tránh mua Lora men phải những sản phẩm kém chất lượng trên thị trường, khách hàng nên trang bị cho mình những kỹ năng cần thiết để phân biệt được hàng giả, hàng thật và mua được sản phẩm với chất lượng tốt nhất và giá cả phù hợp nhất.  Hãy thật thận trọng trước khi quyết định mua sản phẩm giá rẻ. Bởi vì chúng có nguy cơ rất cao là hàng giả.</p>
+                <h3 class="my-[27px]">CÁCH PHÂN BIỆT LORAMEN THẬT GIẢ</h3>
+                <p><span class="bold mb-[27px]">lưu ý</span>: Khi nhận sản phẩm chai xịt <span class="bold">Loramen</span>, khách hàng có thể mở Zalo quét mã QR CODE trên hộp Loramen để kiểm tra sản phẩm đã đăng ký với bộ công thương trên phần mềm check code</p>
+              </div>
+             </div>
+             <!-- lora mua o dau  end -->
+              <!-- thành phần loảmen -->
+               <div class="w-full">
+                
+                <h1 class="mx-auto mt-[27px] text-center text-2xl font-bold uppercase  text-[1.8rem]">thành phần của lora men</h1>
+                <div class="border-t-4 mt-[20px] border-[#4e240c] mx-auto w-[65px] mb-[27px]"></div>        
+                <p class="mt-[27px]">Chai xịt Lora Men chứa các thành phần tự nhiên, đã được nghiên cứu kỹ lưỡng để đảm bảo không gây kích ứng cho người sử dụng. Sản phẩm hoạt động bằng cách làm giảm độ nhạy cảm tạm thời ở vùng da nhạy cảm, giúp kéo dài thời gian mà không làm mất đi cảm giác.</p>
+                    <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-4 h-auto sm:grid-cols-1">
+                      <div>
+                        <img src="./img/tramhuong-HZkxN.png" class="max-w-full h-auto rounded-full  mx-auto" alt="">
+                        <h3 class="mt-[27px] text-center">TRẦM HƯƠNG</h3>
+                        <p class="mt-[27px] text-justify">Sử dụng trầm hương giúp cho tinh thần cảm thấy minh mẫn, sảng khoái, giải tỏa căng thẳng, khả năng giúp tăng cường cho nam.</p>
+                      </div>
+                      <div>
+                        <img src="./img/dinhhuong-jN3hJ.png" class="max-w-full rounded-full h-[153px] mx-auto" alt="">
+                        <h3 class="mt-[27px] text-center">ĐINH HƯƠNG</h3>
+                        <p class="mt-[27px] text-justify">Đinh hương còn có các công dụng khác như: giúp làm giảm c-ă-n-g thẳng, và tăng cường cho nam.</p>
+                      </div><div>
+                        <img src="./img/samngoclinh-vyX3S.png" class="max-w-full rounded-full h-[153px] mx-auto" alt="">
+                        <h3 class="mt-[27px] text-center">SÂM NGỌC LINH</h3>
+                        <p class="mt-[27px] text-justify">Sâm Ngọc Linh có tác dụng giúp chống t-r-ầ-m cảm và giảm lo âu. Giúp tăng cường chức năng nam giới .</p>
+                      </div><div>
+                        <img src="./img/thuocquy-qIFrw.png" class="max-w-full rounded-full h-[153px] mx-auto" alt="">
+                        <h3 class="mt-[27px] text-center">HƠN 10 VỊ THẢO MỘC KHÁC</h3>
+                        <p class="mt-[27px] text-justify">Nhục thung dung, khuynh diệp, cúc hoa, dâm dương hoắc, chiết xuất vỏ hàu, v.v.v…</p>
+                      </div>
+                    </div>
+                    
+                </div>
+               <!-- end thanh phan loảmen -->
+                <!-- công dụng -->
+                 <div class="w-full">
+                  <h1 class="mx-auto mt-[27px] text-center text-2xl font-bold uppercase  text-[1.8rem]">công dụng lora men</h1>
+                  <div class="border-t-4 mt-[20px] border-[#4e240c] mx-auto w-[65px] mb-[27px]"></div>    
+                  <div class="grid grid-cols-1 md:grid-cols-2 mt-[3rem] gap-4 h-auto sm:grid-cols-1">
+                    <div class="">
+                      <p class="italic mt-[20px]">Lora Men có Tác dụng gì?</p>
+                      <ul class="list-disc list-outside pl-5 text-gray-800 leading-relaxed space-y-1">
+                        <li>Hỗ trợ kéo dài thời gian quan hệ.</li>
+                        <li>Giúp cải thiện khả năng cương cứng.</li>
+                        <li>Tăng cường sự hưng phấn và khoái cảm.</li>
+                        <li>Dùng Loramen Plus sẽ làm tăng thời gian, sau một thời gian anh em sử dụng.</li>
+                        <li>Chống xuất tinh sớm.</li>
+                      </ul>
+                      <div class=" mt-[1rem]">
+                  <button onclick="toggleForm()"
+                    class="bg-[#d30000] text-white text-xl font-normol py-[7px] px-[20px] rounded hover:bg-[#b11b1b] focus:outline-none"
+                  >
+                    MUA HÀNG
+                  </button>
+                </div>
+                    </div>
+                    <div >
+                      <img src="./img/2giotDymMh.png" alt="">
+                    </div>
+                  </div>
+                 </div>
+                 <!-- công dụng end -->
+                  <!-- chung nhan kinh doanh -->
+                   <div class="w-full ">
+                  <h1 class="mx-auto my-[30px] text-center text-2xl font-bold uppercase  text-[1.8rem]">chứng nhận kinh doanh</h1>
+                  <div class="border-t-4  border-[#4e240c] mx-auto w-[65px] mb-[27px]"></div>    
+                  <div class="max-w-[726px] mx-auto">
+                  <img src="./img/loramen-giay-chung-nhan-0Axrc.jpg" class="mx-[auto] w-full h-auto " alt="">
+                  <img src="./img/loramen-trung-tam-kiem-nghiem-rHn2H.jpg" class="mx-[auto] w-full h-auto " alt="">
+                  <img src="./img/loramen-ho-so-cong-bo-san-pham-XNTeC.jpg" class="mx-[auto] w-full h-auto " alt="">
+                  </div>
+                   </div>
+                  <!-- chung nhan kinh doanh end -->
+                   <!-- phản hồi -->
+                    <div class=" w-full mx-auto">
+                      <h1 class="mx-auto my-[27px] text-center text-2xl font-bold uppercase  text-[1.8rem]">phản hồi của khách</h1>
+                      <div class="border-t-4 border-[#4e240c] mx-auto w-[65px] mb-[27px]"></div>
+                      <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 h-auto mx-auto ">
+                        <img src="./img/loramenphanhoikhachhang1utfu9-Dxz0v.jpg" class="mx-auto" alt="">
+                        <img src="./img/loramenphanhoikhachhang2jndbn-9HhP3.jpg" class="mx-auto" alt="">
+                        <img src="./img/loramenphanhoikhachhang35flgq-IIRIn.jpg" class="mx-auto" alt="">
+                        <img src="./img/loramenphanhoikhachhang49n2ey-TsXIO.jpg" class="mx-auto" alt="">
+                        <img src="./img/loramenphanhoikhachhang6bjuqe-ZSkIE.jpg" class="mx-auto" alt="">
+                        <img src="./img/loramenphanhoikhachhang5vdjnf-6IRpL.jpg" class="mx-auto" alt="">
+                      </div>
+                    </div>
+                    <!-- huong dan su dung -->
+                    <div class="mt-[40px]  w-full ">
+                      <div class=" max-w-[600px] mx-auto border-[5px] border-red-500 p-4 mt-[27px]">
+                        <h1 class="mx-auto mt-[27px] text-center text-2xl font-bold uppercase w-[450px] text-[1.8rem]">hướng dẩn cách sử dụng lora men</h1>
+                        <div class="border-t-4 mt-[20px] border-[#4e240c] mx-auto w-[65px] mb-[27px]"></div>    
+                        <h3 class="my-[27px]">CÁCH PHÂN BIỆT LORAMEN THẬT GIẢ</h3>
+                        <p class="mb-[27px]"><span class="bold">Bước 1</span>: Lắc đều lọ xịt LORA MEN PLUS, nhỏ (hoặc xịt) 2-3 giọt, bôi vòng tròn, xung quanh vị trí quy đầu và rãnh quy đầu (tránh bôi vào lỗi nhỏ). Sau đó xoa bóp nhẹ nhàng 1-2 phút để thấm đều</p>
+                        <p class="mb-[27px]"><span class="bold">Bước 2</span>: Chờ dung dịch ngâm trong khoảng 25-30 phút rồi đi rửa sạch (rửa bằng sữa tắm, xà bông càng tốt cũng như không ảnh hưởng đến mùi vị).</p>
+                        <p class="mb-[27px]"><span class="bold">Bước 3</span>: Đợi thêm 20 phút nữa, để dịch phát huy hiệu quả cao nhất, rồi bắt đầu (có thể chiến đấu luôn sau khi rửa sạch).</p>
+                        <p class="mb-[27px]"><span class="bold">Cách sử dụng</span>: Dùng 1 lần 1 ngày và không quá 10 lần/1 tháng. Nếu da quá nhạy cảm thì bôi Loramen 15-20 phút và rửa sạch rồi chờ thêm 20 phút nữa, không nên bôi sản phẩm quá nhiều (hoặc quá thời hạn sử dụng)</p>
+                        <p class="mb-[27px]"><span class="bold">Cảnh báo và cẩn thận</span>: Để xa tầm tay trẻ em. Đọc kỹ HDSD trước khi sử dụng.                        </p>
+                        <p class="mb-[27px]"><span class="bold">Điều kiện bảo quản</span>: Điều kiện bảo quản: Bảo quản nơi khô ráo và thoáng mát.</p>
+                      </div>
+                     </div>
+                     <!-- nhà phân phôi  -->
+                     <div class="w-full mt-[50px] ">
+                      <h1 class="mx-auto my-[27px] text-center text-2xl font-bold uppercase  text-[1.8rem]">Nhà Phân Phối Lora Men - Lan Hương Nguyễn</h1>
+                      <div class="border-t-4 mt-[20px] border-[#4e240c] mx-auto w-[65px] mb-[27px]"></div>    
+                      <p class="mt-[27px]">Chung tôi là nhà phân phối chính thức Sản phẩm Lora men tại Sài Gòn - TPHCM và TP Hà Nội giao hàng ngay trong vòng 1h. Ship đơn cho khách hàng toàn quốc sản phẩm Loramen đến tận tay người sử dụng .</p>
+                      <p class="mt-[27px]">Giao hàng kín đáo, đổi tên sản phẩm khi giao hàng. Kiểm tra sản phẩm trước khi thanh toán . </p>
+                      <p class="mt-[27px]">Chai xịt Lora men bao nhiêu tiền?</p>
+                      <p class="mt-[27px]">Hiện nay, <span class="bold">sản phẩm Lora Men sẽ có giá 350000đ cho chai xịt 5ml</span> được đóng gói cẩn thận, nguyên hộp, nguyên seal, đi kèm tem chống hàng giả phía bên trong</p>
+                  </div>
+                   
+           </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- Phần chân trang -->
+    <footer class="border-t-2  mt-[50px] ">
+      <p class="text-red-700 text-center my-[27px]">
+        Lưu ý: Sản phẩm này không phải là thuốc chữa bệnh. Kết quả có thể khác nhau tùy cơ địa của từng người.
+      </p>
+      <div class="bg py-[27px]">
+        <div class="bg max-w-[1350px]  w-full justify-center gap-4 mx-auto  mt-[27px] grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4" >
+          <div class="h-[160px] ml-[20px] w-[300px]">
+            <h3 class="text-white">Lora Men Plus</h1>
+            <ul class="list-disc pl-5 ">
+              <li class="text-white">Địa chỉ: Q.Gò Vấp, Tp. HCM - Q Hoàng Mai, Tp. Hà Nội</li>
+              <li class="text-white">Điện thoại: 0909.731.988</li>
+              <li class="text-white">Email: loramenstore@gmail.com</li>
+            </ul>
+          </div>
+          <div class="  h-[160px] ml-[20px] w-[300px]">
+            <h3 class="text-white">Về chúng tôi</h1>
+              <ul class="list-disc pl-5 ">
+                <li class="text-white">Liên hệ</li>
+                <li class="text-white">Giới thiệu</li>
+                <li class="text-white">Sản phẩm</li>
+              </ul>
+          </div>
+          <div class="  h-[160px] ml-[20px] w-[300px]">
+            <h3 class="text-white">Kết nối với chúng tôi</h1>
+              <ul class="list-disc pl-5 ">
+                <li class="text-white">Facebook</li>
+                <li class="text-white">Zalo</li>
+                <li class="text-white">Youtube</li>
+              </ul>
+        </div>
+        <div class="  h-[160px] ml-[20px] w-[300px]">
+          <h3 class="text-white">Chính sách & quy định</h1>
+            <ul class="list-disc pl-5 ">
+              <li class="text-white">Chính sách điều khoản</li>
+              <li class="text-white">Chính sách bảo mật</li>
+              <li class="text-white">Chính sách vận chuyển</li>
+              <li class="text-white">Chính sách đổi trả</li>
+            </ul>
+        </div>
+      </div>
+      <div class="h-[100px] ">
+        <p class="text-center">©2025. All Rights Reserved.</p>
+      </div>
+
+    </footer>
+    <!-- goi ngay -->
+    <div
+    id="customAlert"
+    class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50"
+  >
+    <div class="bg-white p-6 rounded shadow-lg max-w-sm w-full text-center relative">
+      <button
+        onclick="toggleAlert(false)"
+        class="absolute top-2 right-3 text-gray-500 hover:text-black text-xl"
+      >&times;</button>
+      <p class="text-lg text-gray-800 mb-4">📞 Vui lòng gọi số: <strong>0909.731.988</strong></p>
+      <button
+        onclick="toggleAlert(false)"
+        class="bg-red-600 text-white px-4 py-2 rounded hover:bg-red-700"
+      >Đóng</button>
+    </div>
+  </div>
+  <script>
+    const callNowBtn = document.getElementById("callNowBtn");
+    const customAlert = document.getElementById("customAlert");
+  
+    function toggleAlert(show) {
+      if (show) {
+        customAlert.classList.remove("hidden");
+      } else {
+        customAlert.classList.add("hidden");
+      }
+    }
+  
+    callNowBtn.addEventListener("click", function () {
+      toggleAlert(true);
+    });
+  </script>
+    
+  </body>
+</html>

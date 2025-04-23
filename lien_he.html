@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    
+    <header>
+        <!-- Navbar -->
+    <nav class="  bg shadow px-4 fixed top-0 left-0 w-full z-50">
+    <div class=" h-full mx-auto flex items-center justify-center">
+  
+      <!-- Logo bên trái -->
+      <div class="h-[80px] md:h-[100px] lg:h-[110px] w-auto mr-[27px] "><img src="./img/logo-800x800.png" class="h-full" alt=""></div>
+  
+      <!-- Menu nằm cạnh logo và căn giữa -->
+      <ul id="menu" class="hidden lg:flex space-x-6 font-medium ">
+        <li><a href="./index.html" class=" hover:text-lg text-yellow">TRANG CHỦ</a></li>
+        <li><a href="./gioi_thieu.html" class="  hover:text-lg text-yellow">GIỚI THIỆU</a></li>
+        <li><a href="./san_pham.html" class="  hover:text-lg text-yellow">SẢN PHẨM</a></li>
+        <li><a href="./lien_he.html" class="  text-yellow text-lg">LIÊN HỆ</a></li>
+        <li><button id="callNowBtn"
+          class="bg-[#fff8ad] goingay px-2 py-1 rounded hover:text-white">
+          GỌI NGAY
+        </button></li>
+
+      </ul>
+  
+      <!-- Hamburger (Mobile) -->
+      <button id="menu-btn" class="lg:hidden text-white text-3xl focus:outline-none">
+        ☰
+      </button>
+    </div>
+  
+    <!-- Mobile Menu -->
+    <ul id="mobile-menu" class="lg:hidden hidden flex-col mt-3 px-4 font-medium">
+      <li><a href="./index.html" class="block py-2 text-white border-b">Trang chủ</a></li>
+      <li><a href="./gioi_thieu.html" class="block py-2 text-white border-b">Giới thiệu</a></li>
+      <li><a href="./san_pham.html" class="block py-2 text-white border-b">Sản phẩm</a></li>
+      <li><a href="./lien_he.html" class="block py-2 text-white">Liên hệ</a></li>
+      
+    </ul>
+  </nav>
+  
+  <!-- Script toggle menu -->
+  <script>
+    const menuBtn = document.getElementById('menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+  
+    menuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+  
+    // Đảm bảo menu ẩn đi khi click bên ngoài (nếu cần)
+    window.addEventListener('click', (e) => {
+      if (!e.target.closest('nav')) {
+        mobileMenu.classList.add('hidden');
+      }
+    });
+  </script>
+    </header>
+
+    <!-- Phần nội dung chính -->
+    <main class="mt-[110px]">
+        <div class=" flex justify-center">
+            <div class="max-w-[1184px] w-full mx-auto h-full ">
+                <div class="w-full mt-[27px]">
+                    <h1 class="text-center text-2xl font-bold uppercase text-[1.8rem]">
+                        Giới thiệu Lora Men Plus
+                    </h1>
+                    <div class="border-t-4 border-[#4e240c] mx-auto w-[65px] mt-[20px] mb-[27px]"></div>
+                </div>
+                <div class="w-full mt-[27px] grid grid-cols-1 md:grid-cols-2 gap-4 h-auto sm:grid-cols-1 ">
+                    <div class=" p-4 ">
+                    
+                        <p class="mb-[21px]"><span class="bold">Gọi ngay</span>: <a href="#" class=" font-bold text-red-500 text-xl">0973.019.607</a></p>
+                      <p class="mb-[21px]">Email: <a href="#" class=" text-blue-400">loramenstore@gmail.com</a></p>
+                      <p class="mb-[21px]">Fanpage: <a href="#" class=" text-blue-400">Ấn vào để xem</a></p>
+                      <span class="bold mt-[27px]">Lora Men Plus|</span>
+                      <p>Địa chỉ: Q.Gò Vấp, Tp. HCM - Q Hoàng Mai, Tp. Hà Nội</p>
+                      <p class="mt-[27px] italic">Sản phẩm giúp tăng cường sức khỏe sinh lý, mang lại sự tự tin cho nam giới trong cuộc sống hàng ngày.</p>
+                    </div>
+                    <div class=" p-4 h-[682px]">
+                      
+                      <form id="contact-form" action="https://script.google.com/macros/s/AKfycbxlxPWO0R7bcpP3m2iid2r9v5zSVUQX_YdznBeGnYNi2k_LxkgdzlGoajLqnxJo_yUX/exec" method="POST" class="max-w-md mx-auto bg-white p-6 rounded shadow space-y-4">
+                        <div>
+                          <label class="block font-semibold">Họ tên <span class="text-red-500">*</span></label>
+                          <input type="text" name="name" required class="w-full border border-gray-300 rounded px-3 py-2" />
+                        </div>
+                        <div>
+                          <label class="block font-semibold">Điện thoại <span class="text-red-500">*</span></label>
+                          <input type="tel" name="phone" id="phone"  required class="w-full border border-gray-300 rounded px-3 py-2" />
+                          <div id="phone-error" class="text-red-500 text-sm mt-1 hidden">Số điện thoại không hợp lệ.</div>
+                        </div>
+                        
+                        <div>
+                          <label class="block font-semibold">Email (không bắt buộc)</label>
+                          <input type="email" name="email" class="w-full border border-gray-300 rounded px-3 py-2" />
+                        </div>
+                        <div>
+                          <label class="block font-semibold">Nội dung liên hệ <span class="text-red-500">*</span></label>
+                          <textarea name="message" rows="4" required class="w-full border border-gray-300 rounded px-3 py-2"></textarea>
+                        </div>
+                        <button class="flex items-center bg-gray-500 text-white px-4 py-2 rounded hover:bg-gray-600">
+                          <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 mr-2 fill-current" viewBox="0 0 512 512">
+                            <path d="M476.6 3.7L12.7 234.2c-18.2 8.7-16.3 34.6 2.7 40.3l111.4 34.4L438 121.6 207.1 313.5v90.4c0 17.6 21.4 24.9 32.4 11.9l52.4-61.6 94.2 61.6c13.5 8.8 31.5-.6 31.5-17.2V32c0-19.4-19.9-32.9-38-28.3z"/>
+                          </svg>
+                          Gửi ngay
+                        </button>
+                        
+                      </form>
+
+                      <script>
+                        const form = document.getElementById("contact-form");
+                      
+                        form.addEventListener("submit", function (e) {
+                          e.preventDefault();
+                      
+                          const formData = new FormData(form);
+                          const phone = formData.get("phone");
+                          const phoneInput = document.getElementById("phone");
+                          const phoneError = document.getElementById("phone-error");
+                      
+                          const phoneRegex = /^0\d{9}$/; // Ví dụ: 10 số và bắt đầu bằng số 0
+                      
+                          // Reset trạng thái lỗi
+                          phoneInput.classList.remove("border-red-500");
+                          phoneError.classList.add("hidden");
+                      
+                          // Kiểm tra số điện thoại
+                          if (!phoneRegex.test(phone)) {
+                            phoneInput.classList.add("border-red-500");
+                            phoneError.classList.remove("hidden");
+                            return;
+                          }
+                      
+                          // Nếu hợp lệ thì gửi
+                          fetch(form.action, {
+                            method: "POST",
+                            body: formData,
+                            mode: "cors"
+                          })
+                            .then(response => {
+                              if (response.ok) {
+                                alert("✅ Đặt hàng thành công!");
+                                form.reset();
+                              } else {
+                                alert("❌ Có lỗi khi gửi, vui lòng thử lại.");
+                              }
+                            })
+                            .catch(error => {
+                              console.error("Lỗi:", error);
+                              alert("✅ Đặt hàng thành công.");
+                            });
+                        });
+                      </script>
+                    </div>
+                  </div>
+
+            </div>
+        </div>
+    </main>
+
+    <!-- Phần chân trang -->
+    <footer class="border-t-2  mt-[50px] ">
+      <p class="text-red-700 text-center my-[27px]">
+        Lưu ý: Sản phẩm này không phải là thuốc chữa bệnh. Kết quả có thể khác nhau tùy cơ địa của từng người.
+      </p>
+      <div class="bg py-[27px]">
+        <div class="bg max-w-[1350px]  w-full justify-center gap-4 mx-auto  mt-[27px] grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4" >
+          <div class="h-[160px] ml-[20px] w-[300px]">
+            <h3 class="text-white">Lora Men Plus</h1>
+            <ul class="list-disc pl-5 ">
+              <li class="text-white">Địa chỉ: Q.Gò Vấp, Tp. HCM - Q Hoàng Mai, Tp. Hà Nội</li>
+              <li class="text-white">Điện thoại: 0909.731.988</li>
+              <li class="text-white">Email: loramenstore@gmail.com</li>
+            </ul>
+          </div>
+          <div class="  h-[160px] ml-[20px] w-[300px]">
+            <h3 class="text-white">Về chúng tôi</h1>
+              <ul class="list-disc pl-5 ">
+                <li class="text-white">Liên hệ</li>
+                <li class="text-white">Giới thiệu</li>
+                <li class="text-white">Sản phẩm</li>
+              </ul>
+          </div>
+          <div class="  h-[160px] ml-[20px] w-[300px]">
+            <h3 class="text-white">Kết nối với chúng tôi</h1>
+              <ul class="list-disc pl-5 ">
+                <li class="text-white">Facebook</li>
+                <li class="text-white">Zalo</li>
+                <li class="text-white">Youtube</li>
+              </ul>
+        </div>
+        <div class="  h-[160px] ml-[20px] w-[300px]">
+          <h3 class="text-white">Chính sách & quy định</h1>
+            <ul class="list-disc pl-5 ">
+              <li class="text-white">Chính sách điều khoản</li>
+              <li class="text-white">Chính sách bảo mật</li>
+              <li class="text-white">Chính sách vận chuyển</li>
+              <li class="text-white">Chính sách đổi trả</li>
+            </ul>
+        </div>
+      </div>
+      <div class="h-[100px] ">
+        <p class="text-center">©2025. All Rights Reserved.</p>
+      </div>
+
+    </footer>
+    <!-- goi ngay -->
+    <div
+    id="customAlert"
+    class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50"
+  >
+    <div class="bg-white p-6 rounded shadow-lg max-w-sm w-full text-center relative">
+      <button
+        onclick="toggleAlert(false)"
+        class="absolute top-2 right-3 text-gray-500 hover:text-black text-xl"
+      >&times;</button>
+      <p class="text-lg text-gray-800 mb-4">📞 Vui lòng gọi số: <strong>0909.731.988</strong></p>
+      <button
+        onclick="toggleAlert(false)"
+        class="bg-red-600 text-white px-4 py-2 rounded hover:bg-red-700"
+      >Đóng</button>
+    </div>
+  </div>
+  <script>
+    const callNowBtn = document.getElementById("callNowBtn");
+    const customAlert = document.getElementById("customAlert");
+  
+    function toggleAlert(show) {
+      if (show) {
+        customAlert.classList.remove("hidden");
+      } else {
+        customAlert.classList.add("hidden");
+      }
+    }
+  
+    callNowBtn.addEventListener("click", function () {
+      toggleAlert(true);
+    });
+  </script>
+  
+
+  </body>
+</html>
