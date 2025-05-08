@@ -17,6 +17,9 @@
     color: #b22222;
     font-size: 24px;
 }
+html, body {
+    overflow-x: hidden;
+  }
 .goingay{
  text:#fff8ad;
 }
